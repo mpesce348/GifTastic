@@ -80,7 +80,7 @@ $("#add-button").on("click", function(event){
 	$(buttonItem).addClass("gifButton");
 	//peforms renderButton function
 	renderButtons();
-	// $(buttonItem).clear();
+
 	
 });
 
