@@ -53,9 +53,9 @@ $(".gifButton").on("click", function() {
         	//objects retrieved by the ajax call
         	for (var i=0; i<result.length; i++){
 
-        	$("#row1").html(result[0,1,2].embed_url);
-        	$("#row2").html(result[3,4,5].embed_url);
-        	$("#row3").html(result[6,7,8].embed_url);
+        	var gifImage=$("<img>");
+        	gifImage.attr("src", result[i].images.fixed_height.url);
+        	$("#gifBox").prepend(gifImage);
 
 
         }
