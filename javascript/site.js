@@ -33,7 +33,7 @@ console.log(gifButtons);
 //giphy api to correspond with the data-name assigned to each 
 //button
 $(".gifButton").on("click", function() {
-	$("#gifImage").empty();
+	$("#gifBox").empty();
 	//creates variable which grabs the data-name attribute from
 	//the clicked button
       var name = $(this).attr("data-name");
