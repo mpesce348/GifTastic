@@ -38,7 +38,7 @@ $(".gifButton").on("click", function() {
 	//the clicked button
       var name = $(this).attr("data-name");
       //sets variable as the url to grab relevant data-name gifs
-      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         name + "&api_key=dc6zaTOxFJmzC&limit=9";
         //ajax call to giphy API
       $.ajax({
