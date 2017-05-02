@@ -1,9 +1,10 @@
 //set global variable array for gif buttons, array is to be
 //added to with inputs from user
-var gifButtons = ["Tayne", "Ninja Turtles", "Goldfish",
+var gifButtons = ["Tayne", "Ninja Turtles",
  "Pizza", "Groovy", "Kangaroos", "Ballin", "Captain America",
  "memes", "Macho Man", "Golden Marmosets", "Lonely Island",
- "Russell Crowe", "Clown Cars", "Ace Ventura"];
+ "Russell Crowe", "Ace Ventura", "Cash me outside",
+ "Always Sunny", "Failing Arm Tube Man"];
 
 //create function to render the buttons to the html
 function renderButtons(){
