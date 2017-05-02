@@ -33,6 +33,7 @@ console.log(gifButtons);
 //giphy api to correspond with the data-name assigned to each 
 //button
 $(".gifButton").on("click", function() {
+	$("#gifImage").empty();
 	//creates variable which grabs the data-name attribute from
 	//the clicked button
       var name = $(this).attr("data-name");
@@ -52,9 +53,13 @@ $(".gifButton").on("click", function() {
         	//creates a for loop to go through the list of
         	//objects retrieved by the ajax call
         	for (var i=0; i<result.length; i++){
-
+        	//creates a variable gifImage which dynamically 
+        	//creates an image
         	var gifImage=$("<img>");
+        	//changes the src attribute to the specific image desired
+        	//from the images object 
         	gifImage.attr("src", result[i].images.fixed_height.url);
+        	//prepends the images to the div with id gifBox
         	$("#gifBox").prepend(gifImage);
 
 
@@ -71,11 +76,48 @@ $("#add-button").on("click", function(event){
 	var buttonItem = $("#searchItem").val().trim();
 	//pushes new nutton itm into the gifButton array
 	gifButtons.push(buttonItem);
+	//adds class gif
+	$(buttonItem).addClass("gifButton");
 	//peforms renderButton function
 	renderButtons();
 	// $(buttonItem).clear();
 	
 });
+
+// $(".gifButton").on("click", function() {
+// 	//creates variable which grabs the data-name attribute from
+// 	//the clicked button
+//       var name = $(this).attr("data-name");
+//       //sets variable as the url to grab relevant data-name gifs
+//       var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+//         name + "&api_key=dc6zaTOxFJmzC&limit=9";
+//         //ajax call to giphy API
+//       $.ajax({
+//           url: queryURL,
+//           method: "GET"
+//         })
+//       //stops ajax call and retreives response
+//         .done(function(response){
+//         	//set a variable as the data in the response
+//         	var result = response.data;
+//         	console.log(result);
+//         	//creates a for loop to go through the list of
+//         	//objects retrieved by the ajax call
+//         	for (var i=0; i<result.length; i++){
+//         	//creates a variable gifImage which dynamically 
+//         	//creates an image
+//         	var gifImage=$("<img>");
+//         	//changes the src attribute to the specific image desired
+//         	//from the images object 
+//         	gifImage.attr("src", result[i].images.fixed_height.url);
+//         	//prepends the images to the div with id gifBox
+//         	$("#gifBox").prepend(gifImage);
+
+
+//         }
+//         })
+
+// });
 
 
 
