@@ -1,7 +1,9 @@
 //set global variable array for gif buttons, array is to be
 //added to with inputs from user
 var gifButtons = ["Tayne", "Ninja Turtles", "Goldfish",
- "Pizza", "Groovy", "Kangaroos", "Ballin", "Captain America"];
+ "Pizza", "Groovy", "Kangaroos", "Ballin", "Captain America",
+ "memes", "Macho Man", "Golden Marmosets", "Lonely Island",
+ "Russell Crowe", "Clown Cars", "Ace Ventura"];
 
 //create function to render the buttons to the html
 function renderButtons(){
@@ -30,7 +32,7 @@ $("#btnBox").empty();
       var name = $(this).attr("data-name");
       //sets variable as the url to grab relevant data-name gifs
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        name + "&api_key=dc6zaTOxFJmzC&limit=11";
+        name + "&api_key=dc6zaTOxFJmzC&limit=10";
         //ajax call to giphy API
       $.ajax({
           url: queryURL,
@@ -56,7 +58,7 @@ $("#btnBox").empty();
 
         }
         })
-    
+
 
 });
 }

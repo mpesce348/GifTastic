@@ -1,3 +1,10 @@
 #gifAdd {
 	float: right;
 }
+img {
+	padding: 10px;
+}
+button {
+	padding: 5px;
+	margin: 5px;
+}
