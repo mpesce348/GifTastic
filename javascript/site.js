@@ -23,19 +23,10 @@ $("#btnBox").empty();
  	//appends the new buttons to the div with id "btnBox"
  	$("#btnBox").append(newBtn);
  }
-}
-//calls function to render buttons
-renderButtons();
-console.log(gifButtons);
-
-
-//on-click function for buttons with class gifButton which shoulg grab data from 
-//giphy api to correspond with the data-name assigned to each 
-//button
-$(".gifButton").on("click", function() {
-	$("#gifBox").empty();
-	//creates variable which grabs the data-name attribute from
-	//the clicked button
+ $(".gifButton").on("click", function() {
+    $("#gifBox").empty();
+    //creates variable which grabs the data-name attribute from
+    //the clicked button
       var name = $(this).attr("data-name");
       //sets variable as the url to grab relevant data-name gifs
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
@@ -47,26 +38,36 @@ $(".gifButton").on("click", function() {
         })
       //stops ajax call and retreives response
         .done(function(response){
-        	//set a variable as the data in the response
-        	var result = response.data;
-        	console.log(result);
-        	//creates a for loop to go through the list of
-        	//objects retrieved by the ajax call
-        	for (var i=0; i<result.length; i++){
-        	//creates a variable gifImage which dynamically 
-        	//creates an image
-        	var gifImage=$("<img>");
-        	//changes the src attribute to the specific image desired
-        	//from the images object 
-        	gifImage.attr("src", result[i].images.fixed_height.url);
-        	//prepends the images to the div with id gifBox
-        	$("#gifBox").prepend(gifImage);
+            //set a variable as the data in the response
+            var result = response.data;
+            console.log(result);
+            //creates a for loop to go through the list of
+            //objects retrieved by the ajax call
+            for (var i=0; i<result.length; i++){
+            //creates a variable gifImage which dynamically 
+            //creates an image
+            var gifImage=$("<img>");
+            //changes the src attribute to the specific image desired
+            //from the images object 
+            gifImage.attr("src", result[i].images.fixed_height.url);
+            //prepends the images to the div with id gifBox
+            $("#gifBox").prepend(gifImage);
 
 
         }
         })
 
 });
+}
+//calls function to render buttons
+renderButtons();
+console.log(gifButtons);
+
+
+//on-click function for buttons with class gifButton which shoulg grab data from 
+//giphy api to correspond with the data-name assigned to each 
+//button
+
 //begins on lick function for searhcing for new gifs
 $("#add-button").on("click", function(event){
 	//allows for using enter key or buttons click
