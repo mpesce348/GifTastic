@@ -30,7 +30,7 @@ $("#btnBox").empty();
       var name = $(this).attr("data-name");
       //sets variable as the url to grab relevant data-name gifs
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        name + "&api_key=dc6zaTOxFJmzC&limit=9";
+        name + "&api_key=dc6zaTOxFJmzC&limit=11";
         //ajax call to giphy API
       $.ajax({
           url: queryURL,
@@ -56,6 +56,7 @@ $("#btnBox").empty();
 
         }
         })
+    
 
 });
 }
@@ -85,62 +86,5 @@ $("#add-button").on("click", function(event){
 	
 });
 
-// $(".gifButton").on("click", function() {
-// 	//creates variable which grabs the data-name attribute from
-// 	//the clicked button
-//       var name = $(this).attr("data-name");
-//       //sets variable as the url to grab relevant data-name gifs
-//       var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-//         name + "&api_key=dc6zaTOxFJmzC&limit=9";
-//         //ajax call to giphy API
-//       $.ajax({
-//           url: queryURL,
-//           method: "GET"
-//         })
-//       //stops ajax call and retreives response
-//         .done(function(response){
-//         	//set a variable as the data in the response
-//         	var result = response.data;
-//         	console.log(result);
-//         	//creates a for loop to go through the list of
-//         	//objects retrieved by the ajax call
-//         	for (var i=0; i<result.length; i++){
-//         	//creates a variable gifImage which dynamically 
-//         	//creates an image
-//         	var gifImage=$("<img>");
-//         	//changes the src attribute to the specific image desired
-//         	//from the images object 
-//         	gifImage.attr("src", result[i].images.fixed_height.url);
-//         	//prepends the images to the div with id gifBox
-//         	$("#gifBox").prepend(gifImage);
 
 
-//         }
-//         })
-
-// });
-
-
-
-
-
-    //     {
-    //       var results = response.data;
-          
-    //       for (var i = 0; i < results.length; i++) {
-    //         var gifDiv = $("<div class='item'>");
-
-    //         var rating = results[i].rating;
-
-    //         var p = $("<p>").text("Rating: " + rating);
-
-    //         var personImage = $("<img>");
-    //         personImage.attr("src", results[i].images.fixed_height.url);
-
-    //         gifDiv.prepend(p);
-    //         gifDiv.prepend(personImage);
-
-    //         $("#gifBox").prepend(gifDiv);
-    //       }
-    //     });
-    // });
