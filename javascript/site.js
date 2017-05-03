@@ -6,7 +6,7 @@ var gifButtons = ["Tayne", "Ninja Turtles",
     "Russell Crowe", "Ace Ventura", "Cash me outside",
     "Always Sunny", "Flailing Arm Tube Man", "Bigfoot",
     "Stranger Things", "Back to the Future", "Funny Pigs",
-    "Funny Walks", "Jesus Lizard"
+     "Jesus Lizard"
 ];
 
 //create function to render the buttons to the html
@@ -59,6 +59,7 @@ function renderButtons() {
                     //changes the src attribute to the specific image desired
                     //from the images object, also changes "data-state"
                     //to still, and provides image 
+                    // $("#gifBox").prepend(rating, gifImgage);
                     gifImage.attr({
                         "src": result[i].images.fixed_height_still.url,
                         "data-state": "still",
