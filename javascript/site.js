@@ -56,10 +56,11 @@ function renderButtons() {
                     //creates a variable gifImage which dynamically 
                     //creates an image
                     var gifImage = $("<img>");
+                    //displays the rating next to the gif
+                    $("#gifBox").prepend(rating, gifImage);
                     //changes the src attribute to the specific image desired
                     //from the images object, also changes "data-state"
                     //to still, and provides image 
-                    // $("#gifBox").prepend(rating, gifImgage);
                     gifImage.attr({
                         "src": result[i].images.fixed_height_still.url,
                         "data-state": "still",
